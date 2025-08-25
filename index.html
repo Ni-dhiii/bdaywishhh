@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sweetheart 💗</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Shadows+Into+Light&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Shadows Into Light', cursive;
+      background: linear-gradient(to bottom, #d6e6ff, #fde2f3, #e0ffe0, #fce1ff);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #444;
+      background: linear-gradient(to bottom, #c9eaff, #f8d9ff);
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      margin: 0.5rem 0;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .hero h1:nth-child(1) { animation-delay: 0.5s; }
+    .hero h1:nth-child(2) { animation-delay: 1.5s; }
+    .hero h1:nth-child(3) { 
+      animation-delay: 2.5s; 
+      font-size: 5rem; 
+      color: #ff4fa3; 
+      text-shadow: 0 3px 6px rgba(0,0,0,0.2); 
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Love Note Section */
+    .note {
+      padding: 3rem 1.5rem;
+      background: #fffbe9;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .note::before {
+      content: "✦";
+      font-size: 2rem;
+      position: absolute;
+      top: -10px; left: 15px;
+      color: #ff8fab;
+    }
+
+    /* Gallery Polaroid Style */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1.5rem;
+      background: #f9f9f9;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 10px;
+      width: 220px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border: 1px solid #ddd;
+      transform: rotate(var(--angle));
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .polaroid img, .polaroid video {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-size: 1.1rem;
+      text-align: center;
+      font-family: 'Shadows Into Light', cursive;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero h1:nth-child(3) { font-size: 3.5rem; }
+      .polaroid { width: 90%; transform: rotate(0deg); }
+    }
+.play-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 8px 12px;
+      background: #f5c6f5;
+      border: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+  </style>
+</head>
+<body>
+
+<audio id="bg-music" autoplay loop>
+    <source src="mystery-of-love.mp3" type="audio/mpeg">
+  </audio>
+  <button class="play-btn" onclick="document.getElementById('bg-music').play()">Play Song ♡</button>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>HAPPY</h1>
+    <h1>BIRTHDAYY</h1>
+    <h1>SWEETHEART💗</h1>
+  </section>
+
+  <!-- Love Note -->
+  <section class="note">
+    <p>
+      Happyy bdayy munchkinn🫶🏼, love u lots nd lots nd lots.. Mwaaahahahahhahhhh😭..From the time i met u till today uve given me the happiest moments i can evr get.. 
+      Ee cherendavare cheru enn parayunnath enth sathyam aahnale😭😭.. Like did anyone expect inganathe oru friendship then relation.. I mean woww rytt😭
+      Sheeshhh goddd thankyouu eee kanji vere aarkum kodukaathe enik thanna thannathinn ✨️🥹 heeehehheeeee 
+      Anywayyy lovee uu soo muchhhh Kasiiiiii♡💗💋 nd miss u like hell😭😭
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <!-- First Selfie -->
+    <div class="polaroid" style="--angle: -3deg">
+      <img src="first-selfie.jpg" alt="First Selfie">
+      <div class="caption">The coincidence I'll never forget</div>
+    </div>
+
+    <!-- Video -->
+    <div class="polaroid" style="--angle: 2deg">
+      <video controls>
+        <source src="memory-video.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Favorite memory I'll keep forever</div>
+    </div>
+
+    <!-- Other Pics -->
+    <div class="polaroid" style="--angle: -5deg">
+      <img src="kasi3.jpg" alt="Kasi">
+      <div class="caption">Baby Kasiii♡</div>
+    </div>
+    <div class="polaroid" style="--angle: 4deg">
+      <img src="kasi2.jpg" alt="Kasi">
+      <div class="caption">Little explorer♡</div>
+    </div>
+    <div class="polaroid" style="--angle: -4deg">
+      <img src="kasi1.jpg" alt="Kasi">
+      <div class="caption">My perfect Kasiiiiii♡</div>
+    </div>
+    <div class="polaroid" style="--angle: -5deg">
+      <img src="kasi4.jpg" alt="Kasi">
+      <div class="caption">Cute Morninn Kasiii♡</div>
+    </div>
+    <div class="polaroid" style="--angle: 4deg">
+      <img src="kasi5.jpg" alt="Kasi">
+      <div class="caption">White shirt guy♡</div>
+    </div>
+    <div class="polaroid" style="--angle: -4deg">
+      <img src="kasi6.jpg" alt="Kasi">
+      <div class="caption">Prettiest eyes♡</div>
+    </div>
+    <div class="polaroid" style="--angle: 4deg">
+      <img src="kasi7.jpg" alt="Kasi">
+      <div class="caption">Goofiest of all♡</div>
+    </div>
+    <div class="polaroid" style="--angle: -4deg">
+      <img src="kasi8.jpg" alt="Kasi">
+      <div class="caption">Handsomest smile♡</div>
+    </div>
+
+    
+
+  </section>
+
+</body>
+</html>
