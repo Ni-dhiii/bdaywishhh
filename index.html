@@ -29,71 +29,6 @@
   <div class="stars"></div>
   <div class="shooting-star"></div>
 
-  <!-- Hero Text -->
-  <h1 class="relative text-4xl md:text-6xl font-bold text-pink-600 drop-shadow-lg animate-fadeIn">
-    HAPPY BIRTHDAYY SWEETHEART💗
-  </h1>
-  <p class="relative mt-4 text-lg text-gray-700 animate-fadeInSlow">scroll down ↓</p>
-</section>
-
-<style>
-/* Fade animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn { animation: fadeIn 2s ease-in-out forwards; }
-.animate-fadeInSlow { animation: fadeIn 3s ease-in-out forwards; }
-
-/* Clouds */
-.cloud {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: floatClouds 60s linear infinite;
-}
-.cloud1 { width: 200px; height: 80px; top: 20%; left: -200px; animation-delay: 0s; }
-.cloud2 { width: 150px; height: 60px; top: 50%; left: -150px; animation-delay: 20s; }
-.cloud3 { width: 250px; height: 100px; top: 70%; left: -250px; animation-delay: 40s; }
-
-@keyframes floatClouds {
-  from { transform: translateX(0); }
-  to { transform: translateX(120vw); }
-}
-
-/* Stars background */
-.stars {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  box-shadow: 20px 30px white, 100px 150px white, 200px 80px white, 300px 120px white, 400px 200px white, 500px 250px white;
-  animation: twinkle 3s infinite alternate;
-}
-@keyframes twinkle {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
-}
-
-/* Shooting Star */
-.shooting-star {
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 3px;
-  height: 80px;
-  background: linear-gradient(white, transparent);
-  transform: rotate(45deg);
-  animation: shoot 5s linear infinite;
-}
-
-@keyframes shoot {
-  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateX(120vw) translateY(60vh) rotate(45deg); opacity: 0; }
-}
-</style>
     
 
     /* Love Note Section */
@@ -189,6 +124,73 @@
     <h1>BIRTHDAYY</h1>
     <h1>SWEETHEART💗</h1>
   </section>
+
+
+  <!-- Hero Text -->
+  <h1 class="relative text-4xl md:text-6xl font-bold text-pink-600 drop-shadow-lg animate-fadeIn">
+    HAPPY BIRTHDAYY SWEETHEART💗
+  </h1>
+  <p class="relative mt-4 text-lg text-gray-700 animate-fadeInSlow">scroll down ↓</p>
+</section>
+
+<style>
+/* Fade animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 2s ease-in-out forwards; }
+.animate-fadeInSlow { animation: fadeIn 3s ease-in-out forwards; }
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatClouds 60s linear infinite;
+}
+.cloud1 { width: 200px; height: 80px; top: 20%; left: -200px; animation-delay: 0s; }
+.cloud2 { width: 150px; height: 60px; top: 50%; left: -150px; animation-delay: 20s; }
+.cloud3 { width: 250px; height: 100px; top: 70%; left: -250px; animation-delay: 40s; }
+
+@keyframes floatClouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(120vw); }
+}
+
+/* Stars background */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: 20px 30px white, 100px 150px white, 200px 80px white, 300px 120px white, 400px 200px white, 500px 250px white;
+  animation: twinkle 3s infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/* Shooting Star */
+.shooting-star {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 3px;
+  height: 80px;
+  background: linear-gradient(white, transparent);
+  transform: rotate(45deg);
+  animation: shoot 5s linear infinite;
+}
+
+@keyframes shoot {
+  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(120vw) translateY(60vh) rotate(45deg); opacity: 0; }
+}
+</style> 
 
   <!-- Love Note -->
   <section class="note">
