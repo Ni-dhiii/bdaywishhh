@@ -15,25 +15,77 @@
       scroll-behavior: smooth;
     }
 
-<!-- Hero Section -->
-<section id="hero" class="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden">
-  <!-- Background pastel gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-pink-100 via-blue-100 to-green-100"></div>
+    /* Hero Section */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-  <!-- Floating clouds -->
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
+    /* Fade animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn { animation: fadeIn 2s ease-in-out forwards; }
+    .animate-fadeInSlow { animation: fadeIn 3s ease-in-out forwards; }
 
-  <!-- Stars -->
-  <div class="stars"></div>
-  <div class="shooting-star"></div>
+    /* Clouds */
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatClouds 60s linear infinite;
+    }
+    .cloud1 { width: 200px; height: 80px; top: 20%; left: -200px; animation-delay: 0s; }
+    .cloud2 { width: 150px; height: 60px; top: 50%; left: -150px; animation-delay: 20s; }
+    .cloud3 { width: 250px; height: 100px; top: 70%; left: -250px; animation-delay: 40s; }
 
-    
+    @keyframes floatClouds {
+      from { transform: translateX(0); }
+      to { transform: translateX(120vw); }
+    }
+
+    /* Stars */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      box-shadow: 20px 30px white, 100px 150px white, 200px 80px white, 
+                  300px 120px white, 400px 200px white, 500px 250px white;
+      animation: twinkle 3s infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* Shooting Star */
+    .shooting-star {
+      position: absolute;
+      top: 10%;
+      left: -10%;
+      width: 3px;
+      height: 80px;
+      background: linear-gradient(white, transparent);
+      transform: rotate(45deg);
+      animation: shoot 5s linear infinite;
+    }
+    @keyframes shoot {
+      0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateX(120vw) translateY(60vh) rotate(45deg); opacity: 0; }
+    }
 
     /* Love Note Section */
-    .note 
-{
+    .note {
       padding: 3rem 1.5rem;
       background: #fffbe9;
       font-size: 1.3rem;
@@ -44,7 +96,6 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
       position: relative;
     }
-
     .note::before {
       content: "✦";
       font-size: 2rem;
@@ -62,7 +113,6 @@
       padding: 3rem 1.5rem;
       background: #f9f9f9;
     }
-
     .polaroid {
       background: white;
       padding: 10px;
@@ -72,17 +122,14 @@
       transform: rotate(var(--angle));
       transition: transform 0.3s ease;
     }
-
     .polaroid:hover {
       transform: scale(1.05) rotate(0deg);
     }
-
     .polaroid img, .polaroid video {
       width: 100%;
       display: block;
       border-radius: 4px;
     }
-
     .caption {
       margin-top: 8px;
       font-size: 1.1rem;
@@ -93,10 +140,11 @@
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 3rem; }
-      .hero h1:nth-child(3) { font-size: 3.5rem; }
       .polaroid { width: 90%; transform: rotate(0deg); }
     }
-.play-btn {
+
+    /* Play Button */
+    .play-btn {
       position: fixed;
       top: 15px;
       right: 15px;
@@ -108,117 +156,50 @@
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-
   </style>
 </head>
 <body>
 
-<audio id="bg-music" autoplay loop>
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
     <source src="mystery-of-love.mp3" type="audio/mpeg">
   </audio>
   <button class="play-btn" onclick="document.getElementById('bg-music').play()">Play Song ♡</button>
 
   <!-- Hero -->
-  <section class="hero">
-    <h1>HAPPY</h1>
-    <h1>BIRTHDAYY</h1>
-    <h1>SWEETHEART💗</h1>
+  <section id="hero">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="stars"></div>
+    <div class="shooting-star"></div>
+
+    <h1 class="animate-fadeIn">HAPPY BIRTHDAYY SWEETHEART💗</h1>
+    <p class="animate-fadeInSlow">scroll down ↓</p>
   </section>
-
-
-  <!-- Hero Text -->
-  <h1 class="relative text-4xl md:text-6xl font-bold text-pink-600 drop-shadow-lg animate-fadeIn">
-    HAPPY BIRTHDAYY SWEETHEART💗
-  </h1>
-  <p class="relative mt-4 text-lg text-gray-700 animate-fadeInSlow">scroll down ↓</p>
-</section>
-
-<style>
-/* Fade animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn { animation: fadeIn 2s ease-in-out forwards; }
-.animate-fadeInSlow { animation: fadeIn 3s ease-in-out forwards; }
-
-/* Clouds */
-.cloud {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: floatClouds 60s linear infinite;
-}
-.cloud1 { width: 200px; height: 80px; top: 20%; left: -200px; animation-delay: 0s; }
-.cloud2 { width: 150px; height: 60px; top: 50%; left: -150px; animation-delay: 20s; }
-.cloud3 { width: 250px; height: 100px; top: 70%; left: -250px; animation-delay: 40s; }
-
-@keyframes floatClouds {
-  from { transform: translateX(0); }
-  to { transform: translateX(120vw); }
-}
-
-/* Stars background */
-.stars {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  box-shadow: 20px 30px white, 100px 150px white, 200px 80px white, 300px 120px white, 400px 200px white, 500px 250px white;
-  animation: twinkle 3s infinite alternate;
-}
-@keyframes twinkle {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
-}
-
-/* Shooting Star */
-.shooting-star {
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 3px;
-  height: 80px;
-  background: linear-gradient(white, transparent);
-  transform: rotate(45deg);
-  animation: shoot 5s linear infinite;
-}
-
-@keyframes shoot {
-  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 1; }
-  80% { opacity: 1; }
-  100% { transform: translateX(120vw) translateY(60vh) rotate(45deg); opacity: 0; }
-}
-</style> 
 
   <!-- Love Note -->
   <section class="note">
     <p>
       Happyy bdayy munchkinn🫶🏼, love u lots nd lots nd lots.. Mwaaahahahahhahhhh😭..From the time i met u till today uve given me the happiest moments i can evr get.. 
       Ee cherendavare cheru enn parayunnath enth sathyam aahnale😭😭.. Like did anyone expect inganathe oru friendship then relation.. I mean woww rytt😭
-      Sheeshhh goddd thankyouu eee kanji vere aarkum kodukaathe enik thanna thannathinn ✨️🥹 heeehehheeeee 
+      Sheeshhh goddd thankyouu eee kasi vere aarkum kodukaathe enik thanna thannathinn ✨️🥹 heeehehheeeee 
       Anywayyy lovee uu soo muchhhh Kasiiiiii♡💗💋 nd miss u like hell😭😭
     </p>
   </section>
 
   <!-- Gallery -->
   <section class="gallery">
-    <!-- First Selfie -->
     <div class="polaroid" style="--angle: -3deg">
       <img src="first-selfie.jpg" alt="First Selfie">
       <div class="caption">The coincidence I'll never forget</div>
     </div>
-
-    <!-- Video -->
     <div class="polaroid" style="--angle: 2deg">
       <video controls>
         <source src="memory-video.mp4" type="video/mp4">
       </video>
       <div class="caption">Favorite memory I'll keep forever</div>
     </div>
-
-    <!-- Other Pics -->
     <div class="polaroid" style="--angle: -5deg">
       <img src="kasi3.jpg" alt="Kasi">
       <div class="caption">Baby Kasiii♡</div>
@@ -251,9 +232,6 @@
       <img src="kasi8.jpg" alt="Kasi">
       <div class="caption">Handsomest smile♡</div>
     </div>
-
-    
-
   </section>
 
 </body>
